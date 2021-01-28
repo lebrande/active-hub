@@ -16,3 +16,4 @@ Instructions:
   - Follow the guide: https://github.com/netlify/next-on-netlify#installation
   - Push the code to github and log in to Netlify
   - Deploy a new site
+  - Enjoy! 🎸
