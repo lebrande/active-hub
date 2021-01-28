@@ -10,5 +10,5 @@ Instructions:
   - Change the extentions to `.tsx`
   - run: `npm run dev`, then you'll be prompted to install `yarn add --dev typescript @types/react @types/node`
   - a new file appeard: `tsconfig.js`. Set `"strict": true`.
-  - remove `pages/api` 
+  - remove `pages/api`
 
