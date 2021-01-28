@@ -1,4 +1,8 @@
-# Active Hub
+# Active Hub 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/19b07686-e147-41c5-9691-7b791865c12d/deploy-status)](https://app.netlify.com/sites/active-hub/deploys)
+
+**Live URL: https://active-hub.netlify.app/**
 
 This is an app for my channel purposes.
 Below you can find a guide how this app is created.
