@@ -17,3 +17,8 @@ Instructions:
   - Push the code to github and log in to Netlify
   - Deploy a new site
   - Enjoy! 🎸
+- Tailwind framework installation and set up (branch: `1-3-install-tailwind`)
+  - Go to: https://tailwindcss.com/docs/installation` and pick Next.js
+  - Follow instructions
+  - Drop the code from `pages/index.tsx` and grab some cool design from https://blocks.wickedtemplates.com
+  - Deploy again and test 🧐
