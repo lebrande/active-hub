@@ -1,6 +1,10 @@
+import { FC, useState } from 'react';
 import Head from 'next/head'
+import Link from 'next/link'
 
-const Home = () => {
+const Home: FC = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <div>
       <Head>
@@ -8,36 +12,101 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className="text-gray-700 body-font">
-          <div className="container flex flex-col items-center px-5 py-16 mx-auto lg:px-20 lg:py-24 md:flex-row">
-            <div className="flex flex-col items-center w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:items-start md:text-left md:mb-0 lg:text-center">
-              <h1 className="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-5xl title-font">
-                Medium lenght display headline.
-              </h1>
-              <p className="mb-8 text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
-                Deploy your mvp in minutes, not days. WT offers you a a wide selection swapable sections for
-                your landing page.
-              </p>
-              <div className="flex justify-center">
-                <input className="flex-grow w-full px-4 py-2 mb-4 mr-4 text-base text-purple-700 bg-gray-100 border border-gray-400 rounded-lg focus:outline-none focus:border-purple-500 sm:mb-0 focus:bg-white"
-                  placeholder="Your Email"
-                  type="email" />
-                <button
-                  className="flex items-center px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none">
-                  Action
-                  </button>
+        <div className="relative bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+              <svg className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polygon points="50,0 100,0 50,100 0,100" />
+              </svg>
+
+              <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
+                <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+                  <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                    <div className="flex items-center justify-between w-full md:w-auto">
+                      <a href="#">
+                        <span className="sr-only">Workflow</span>
+                        <img className="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" />
+                      </a>
+                      <div className="-mr-2 flex items-center md:hidden">
+                        <button onClick={() => setShowMenu(true)} type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
+                          <span className="sr-only">Open main menu</span>
+                          <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                    <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Product</a>
+
+                    <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Features</a>
+
+                    <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Marketplace</a>
+
+                    <a href="#" className="font-medium text-gray-500 hover:text-gray-900">Company</a>
+
+                    <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">Log in</a>
+                  </div>
+                </nav>
               </div>
-              <p className="w-full mt-2 mb-8 text-sm text-left text-gray-600">
-                Neutra shabby chic ramps, viral fixie.
-              </p>
-            </div>
-            <div className="w-5/6 lg:max-w-lg lg:w-full md:w-1/2">
-              <img className="object-cover object-center rounded-lg "
-                alt="hero"
-                src="https://dummyimage.com/720x600/F3F4F7/8693ac" />
+              {showMenu && (
+                <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                  <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                    <div className="px-5 pt-4 flex items-center justify-between">
+                      <div>
+                        <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
+                      </div>
+                      <div className="-mr-2">
+                        <button onClick={() => setShowMenu(false)} type="button" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                          <span className="sr-only">Close main menu</span>
+                          <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
+                      <div className="px-2 pt-2 pb-3 space-y-1" role="none">
+                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Product</a>
+
+                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Features</a>
+
+                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Marketplace</a>
+
+                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Company</a>
+                      </div>
+                      <div role="none">
+                        <a href="#" className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100" role="menuitem">Log in</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                <div className="sm:text-center lg:text-left">
+                  <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                    <span className="block xl:inline">Active</span>
+                    <span className="block text-indigo-600 xl:inline">Hub</span>
+                  </h1>
+                  <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+                  <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                    <div className="rounded-md shadow">
+                      <Link href="/admin"><a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">Get started</a></Link>
+                    </div>
+                    <div className="mt-3 sm:mt-0 sm:ml-3">
+                      <Link href="/admin"><a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">Live demo</a></Link>
+                    </div>
+                  </div>
+                </div>
+              </main>
             </div>
           </div>
-        </section>
+          <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="" />
+          </div>
+        </div>
       </main>
     </div>
   )

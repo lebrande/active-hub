@@ -24,5 +24,8 @@ Instructions:
 - Tailwind framework installation and set up (branch: `1-3-install-tailwind`)
   - Go to: https://tailwindcss.com/docs/installation and pick Next.js
   - Follow instructions
-  - Drop the code from `pages/index.tsx` and grab some cool design from https://blocks.wickedtemplates.com
+  - Drop the code from `pages/index.tsx` and grab some  hero from - https://tailwindui.com/components/marketing/sections/heroes - get first hero
+  - Adjust mobile menu using `useState` hook
+  - Add links to `/admin` page
+  - Add cool page title
   - Deploy again and test 🧐
